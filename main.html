@@ -4,13 +4,86 @@
 
 <head>
 	<link rel="stylesheet" href="styles.css">
+	<style>
+		/* center the circles on the page */
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			background-color: #f0f0f0;
+			overflow: hidden;
+		}
+
+		/* Basic styling for all concentric circles */
+		#outer, #middle, #inner, #smallest {
+			position: absolute;
+			border-radius: 50%;
+		}
+
+		#outer {
+			width: 300px;
+			height: 300px;
+			background-color: #ff0000;
+		}
+
+		#middle {
+			width: 250px;
+			height: 250px;
+			background-color: #ffa500;
+			top: 25px;
+			left: 25px;
+		}
+
+		#inner {
+			width: 200px;
+			height: 200px;
+			background-color: #ffff00;
+			top: 25px;
+			right: 25px;
+			/* left: 50px; */
+		}
+		#smallest {
+    width: 150px;
+    height: 150px;
+    background-color: #008000; /* Green */
+    top: 25px; /* Center the smallest circle */
+    left: 25px; /* Center the smallest circle */
+}
+
+#smallest:after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: #0000ff; /* Blue */
+    border-radius: 50%;
+    position: absolute;
+    top: 25px; /* Center the blue circle inside the green one */
+    left: 25px; /* Center the blue circle inside the green one */
+}
+
+#smallest:after:after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #800080; /* Purple */
+    border-radius: 50%;
+    position: absolute;
+    top: 25px; /* Center the purple circle inside the blue one */
+    left: 25px; /* Center the purple circle inside the blue one */
+}
+	</style>
 </head>
 
 <body>
     <!-- the entire body must be written by student -->
     <div id="outer">
         <div id="middle">
-            <div id="inner"></div>
+            <div id="inner">
+				<div id="smallest"></div>
+			</div>
         </div>
     </div>
     <script type="text/javascript" src="./script.js">
